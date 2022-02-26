@@ -13,7 +13,12 @@ class DentistTreatment extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('dentist_treatments', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('dentist_id');
+            $table->foreignId('treatment_id');
+            $table->timestamps();
+        });
     }
 
     /**

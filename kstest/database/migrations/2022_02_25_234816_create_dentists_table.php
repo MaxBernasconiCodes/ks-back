@@ -15,6 +15,7 @@ class CreateDentistsTable extends Migration
     {
         Schema::create('dentists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->nullable();
             $table->timestamps();
         });
     }
