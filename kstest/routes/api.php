@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DentistController;
 use App\Http\Controllers\PatientController;
 use App\Http\Controllers\TreatmentController;
@@ -17,9 +18,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/register', [AuthController::class, 'register']);
+
 Route::resource('/patients', PatientController::class);
 Route::resource('/dentists', DentistController::class);
 Route::resource('/treatments', TreatmentController::class);
+
+
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
